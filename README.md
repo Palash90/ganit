@@ -1,5 +1,5 @@
 # Ganit
-An open source Multi-Platform Multi-Language support Programming Language/Library for Calculation Utility. The implementation is planned to be using [Split and Merge](https://github.com/vassilych/cscs) algorithm.
+An open source Multi-Platform Multi-Language Programming Language/Library for Calculation Utility. The implementation is planned to be using [Split and Merge](https://github.com/vassilych/cscs) algorithm.
 
 ## The Plan
 
