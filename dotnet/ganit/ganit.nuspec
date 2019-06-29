@@ -7,7 +7,6 @@
     <authors>Palash Kanti Kundu</authors>
     <owners>Palash Kanti Kundu</owners>
     <projectUrl>https://github.com/Palash90/ganit</projectUrl>
-    <iconUrl>https://github.com/Palash90/ganit/blob/master/calculator.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Ganit(गणित) means calculation in Sanskrit. As the name suggests, this is Programming Language and/or Library for Calculation</description>
     <releaseNotes>First version upload</releaseNotes>
