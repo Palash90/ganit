@@ -14,5 +14,11 @@
     <releaseNotes>First version upload</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>language calculation programming ganit mathematics</tags>
+    
   </metadata>
+  <files>
+    <file src="../../README.md" target="" />
+    <file src="bin\Debug\*.dll" target="lib" />
+    <file src="program.cs" target="content\Program.cs" />
+  </files>
 </package>
