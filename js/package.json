@@ -15,10 +15,8 @@
     "mathematics"
   ],
   "author": "Palash Kanti Kundu",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Palash90/ganit/issues"
   },
-  "homepage": "https://github.com/Palash90/ganit",
-  "files": ["../README.md"]
+  "homepage": "https://github.com/Palash90/ganit"
 }

@@ -9,7 +9,7 @@ setuptools.setup(
      description="Ganit(गणित) means Calculation in Sanskrit. As the name suggests this is a calculation utility",
      long_description=long_description,
      long_description_content_type="text/markdown",
-     url="",
+     url="https://github.com/Palash90/ganit",
      packages=setuptools.find_packages(),
      classifiers=[
          "Programming Language :: Python :: 3",
@@ -17,5 +17,3 @@ setuptools.setup(
          "Operating System :: OS Independent",
      ],
  )
-# python3 setup.py sdist bdist_wheel
-# python3 -m twine upload dist/*

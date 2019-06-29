@@ -4,7 +4,7 @@ version = "0.2.0"
 authors = ["Palash <palash.kanti.kundu.90@gmail.com>"]
 edition = "2018"
 description="Ganit(गणित) means calculation in Sanskrit. As the name suggests, this is Programming Language and/or Library for Calculation"
-readme = "../../README.md"
+readme = "README.md"
 license = "MIT"
 
 categories = ["parsing"]

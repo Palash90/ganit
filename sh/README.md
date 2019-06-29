@@ -1,0 +1,2 @@
+# Ganit as shell script
+
