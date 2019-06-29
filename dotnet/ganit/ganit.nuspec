@@ -8,7 +8,7 @@
     <owners>Palash Kanti Kundu</owners>
     <licenseUrl>https://github.com/Palash90/ganit/blob/master/LICENSE</licenseUrl>
     <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <iconUrl>https://github.com/Palash90/ganit/blob/master/calculator.svg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
