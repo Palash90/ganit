@@ -3,7 +3,7 @@ with open("../README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
      name='ganit',
-     version='0.1.8',
+     version='0.2.0',
      author="Palash Kanti Kundu",
      author_email="me@palash90.in",
      description="Ganit(गणित) means Calculation in Sanskrit. As the name suggests this is a calculation utility",

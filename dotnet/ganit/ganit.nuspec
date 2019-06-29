@@ -2,11 +2,10 @@
 <package >
   <metadata>
     <id>ganit</id>
-    <version>0.0.1</version>
+    <version>0.2.0</version>
     <title>ganit</title>
     <authors>Palash Kanti Kundu</authors>
     <owners>Palash Kanti Kundu</owners>
-    <licenseUrl>https://github.com/Palash90/ganit/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Palash90/ganit</projectUrl>
     <iconUrl>https://github.com/Palash90/ganit/blob/master/calculator.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -14,9 +13,10 @@
     <releaseNotes>First version upload</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>language calculation programming ganit mathematics</tags>
-    
+
   </metadata>
   <files>
+    <file src="../../LICENSE.txt" target="" />
     <file src="../../README.md" target="" />
     <file src="bin\Debug\*.dll" target="lib" />
     <file src="program.cs" target="content\Program.cs" />
