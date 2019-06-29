@@ -7,12 +7,12 @@
     <authors>Palash Kanti Kundu</authors>
     <owners>Palash Kanti Kundu</owners>
     <licenseUrl>https://github.com/Palash90/ganit/blob/master/LICENSE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>https://github.com/Palash90/ganit/blob/master/calculator.svg</iconUrl>
+    <projectUrl>https://github.com/Palash90/ganit</projectUrl>
+    <iconUrl>https://github.com/Palash90/ganit/blob/master/calculator.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <description>Ganit(गणित) means calculation in Sanskrit. As the name suggests, this is Programming Language and/or Library for Calculation</description>
+    <releaseNotes>First version upload</releaseNotes>
     <copyright>Copyright 2019</copyright>
-    <tags>Tag1 Tag2</tags>
+    <tags>language calculation programming ganit mathematics</tags>
   </metadata>
 </package>
