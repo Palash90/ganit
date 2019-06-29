@@ -2,3 +2,5 @@ dotnet/ganit/bin/
 dotnet/ganit/obj/
 rust/ganit/target/*
 java/ganit/target/*
+python/ganit.egg-info/*
+python/dist/*
