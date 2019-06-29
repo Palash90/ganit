@@ -1,0 +1,23 @@
+{
+  "name": "ganit",
+  "version": "0.0.6",
+  "description": "Ganit(गणित) means Calculation in Sanskrit. As the name suggests this is a calculation utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Palash90/ganit"
+  },
+  "keywords": [
+    "parser",
+    "mathematics"
+  ],
+  "author": "Palash Kanti Kundu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Palash90/ganit/issues"
+  },
+  "homepage": "https://github.com/Palash90/ganit"
+}
