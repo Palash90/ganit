@@ -3,7 +3,7 @@
   <groupId>in.palash90.ganit</groupId>
   <artifactId>ganit</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.0</version>
+  <version>0.1.1-SNAPSHOT</version>
   <name>ganit</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -99,7 +99,7 @@
 <connection>scm:git:git://github.com:Palash90/ganit.git</connection>
 <developerConnection>scm:git:git@github.com:Palash90/ganit.git</developerConnection>
 <url>https://github.com/Palash90/ganit</url>
-<tag>ganit-0.1.0</tag>
+<tag>HEAD</tag>
 </scm>
 
 </project>
