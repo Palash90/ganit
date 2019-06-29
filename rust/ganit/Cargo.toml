@@ -1,0 +1,14 @@
+[package]
+name = "ganit"
+version = "0.1.2"
+authors = ["Palash <palash.kanti.kundu.90@gmail.com>"]
+edition = "2018"
+description="Ganit(गणित) means calculation in Sanskrit. As the name suggests, this is Programming Language and/or Library for Calculation"
+readme = "../../README.md"
+license = "MIT"
+
+categories = ["parsing"]
+
+repository = "https://github.com/Palash90/ganit"
+
+[dependencies]
