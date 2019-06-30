@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="java/ganit/src/main/java"/>
+	<classpathentry kind="src" path="java/ganit/src/test/java"/>
+	<classpathentry kind="lib" path="java/ganit/target/ganit-0.2.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="java/ganit/target/ganit-0.2.0-sources.jar"/>
+	<classpathentry kind="lib" path="java/ganit/target/ganit-0.2.0.jar"/>
+	<classpathentry kind="lib" path="java/ganit/target/nexus-staging/staging/c39589ce7e8ca8/in/palash90/ganit/ganit/0.2.0/ganit-0.2.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="java/ganit/target/nexus-staging/staging/c39589ce7e8ca8/in/palash90/ganit/ganit/0.2.0/ganit-0.2.0-sources.jar"/>
+	<classpathentry kind="lib" path="java/ganit/target/nexus-staging/staging/c39589ce7e8ca8/in/palash90/ganit/ganit/0.2.0/ganit-0.2.0.jar"/>
+	<classpathentry kind="output" path="java/ganit/target/classes"/>
+</classpath>
