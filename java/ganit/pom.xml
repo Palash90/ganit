@@ -1,11 +1,9 @@
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>in.palashkantikundu.ganit</groupId>
 	<artifactId>ganit-SNAPSHOT</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>ganit</name>
 	<description>Ganit(गणित) means calculation in Sanskrit. As the name suggests, this is Programming Language and/or
         Library for Calculation
@@ -152,7 +150,7 @@
 		<connection>scm:git:git://github.com:Palash90/ganit.git</connection>
 		<developerConnection>scm:git:git@github.com:Palash90/ganit.git</developerConnection>
 		<url>https://github.com/Palash90/ganit</url>
-		<tag>HEAD</tag>
+		<tag>0.0.1</tag>
 	</scm>
 	<profiles>
 		<!-- GPG Signature on release -->
