@@ -1,9 +1,9 @@
-package in.palash90.ganit;
+package in.palashkantikundu.ganit;
 
 import java.io.FileReader;
 import java.io.IOException;
 
-import in.palash90.ganit.analyzer.Lexer;
+import in.palashkantikundu.ganit.analyzer.Lexer;
 
 public class Ganit {
 

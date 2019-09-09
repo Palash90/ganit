@@ -1,7 +1,7 @@
 /**
  *
  */
-package in.palash90.ganit.analyzer;
+package in.palashkantikundu.ganit.analyzer;
 
 public class Token {
 	private Object value;
