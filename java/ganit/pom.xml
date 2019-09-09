@@ -3,7 +3,7 @@
 	<groupId>in.palashkantikundu.ganit</groupId>
 	<artifactId>ganit-SNAPSHOT</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>ganit</name>
 	<description>Ganit(गणित) means calculation in Sanskrit. As the name suggests, this is Programming Language and/or
         Library for Calculation
@@ -150,7 +150,7 @@
 		<connection>scm:git:git://github.com:Palash90/ganit.git</connection>
 		<developerConnection>scm:git:git@github.com:Palash90/ganit.git</developerConnection>
 		<url>https://github.com/Palash90/ganit</url>
-		<tag>0.0.1</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<profiles>
 		<!-- GPG Signature on release -->
