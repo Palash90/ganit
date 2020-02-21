@@ -1,5 +1,5 @@
 # Ganit
-An open source Multi-Platform Multi-Language Programming Language/Library for Calculation Utility. The implementation is planned to be using an extended [Shunting Yard](https://en.wikipedia.org/wiki/Shunting-yard_algorithm) algorithm. The language supports very basic features and mostly focused on Mathematics and especially Machine Learning. Nothing fancy, not performant. This is just here to prove that things work and makes my understanding of the computer system concrete.
+An open source Multi-Platform Multi-Language Programming Language Implementation/Library for Calculation Utility. The implementation is planned to be using an extended [Shunting Yard](https://en.wikipedia.org/wiki/Shunting-yard_algorithm) algorithm. The language supports very basic features and mostly focused on Mathematics and especially Machine Learning. Nothing fancy, not performant. This is just here to prove that things work and makes my understanding of the computer system concrete.
 
 ## The Plan
 
