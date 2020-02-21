@@ -8,10 +8,10 @@ This is a project which is in planning phase and all the required publishing cha
 The language is planned to be ported to the following languages as libraries -
 
 1. dotnet
-  - [ ] Basic Mathematical expression Evaluation
-  - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
-  - [ ] Branching and looping support
-  - [ ] Function Implementation
+   - [ ] Basic Mathematical expression Evaluation
+   - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
+   - [ ] Branching and looping support
+   - [ ] Function Implementation
   
 1. JavaScript
   - [ ] Basic Mathematical expression Evaluation
