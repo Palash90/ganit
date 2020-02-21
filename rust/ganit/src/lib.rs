@@ -1,7 +1,6 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+mod parser;
+
+#[test]
+fn it_tokenizes_input() {
+    assert_eq!("s","s");
 }
