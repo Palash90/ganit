@@ -7,7 +7,7 @@ description="Ganit(गणित) means calculation in Sanskrit. As the name sugg
 readme = "README.md"
 license = "MIT"
 
-categories = ["parsing"]
+categories = ["parsing", "Machine Learning"]
 
 repository = "https://github.com/Palash90/ganit"
 
