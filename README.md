@@ -14,43 +14,43 @@ The language is planned to be ported to the following languages as libraries -
    - [ ] Function Implementation
   
 1. JavaScript
-  - [ ] Basic Mathematical expression Evaluation
-  - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
-  - [ ] Branching and looping support
-  - [ ] Function Implementation
+   - [ ] Basic Mathematical expression Evaluation
+   - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
+   - [ ] Branching and looping support
+   - [ ] Function Implementation
   
 1. python
-  - [ ] Basic Mathematical expression Evaluation
-  - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
-  - [ ] Branching and looping support
-  - [ ] Function Implementation
+   - [ ] Basic Mathematical expression Evaluation
+   - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
+   - [ ] Branching and looping support
+   - [ ] Function Implementation
   
 1. Java
-  - [ ] Basic Mathematical expression Evaluation
-  - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
-  - [ ] Branching and looping support
-  - [ ] Function Implementation
+   - [ ] Basic Mathematical expression Evaluation
+   - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
+   - [ ] Branching and looping support
+   - [ ] Function Implementation
   
 1. Rust (Implementation in Progress)
-  - [ ] Basic Mathematical expression Evaluation
-  - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
-  - [ ] Branching and looping support
-  - [ ] Function Implementation
+   - [ ] Basic Mathematical expression Evaluation
+   - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
+   - [ ] Branching and looping support
+   - [ ] Function Implementation
   
 1. C
-  - [ ] Basic Mathematical expression Evaluation
-  - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
-  - [ ] Branching and looping support
-  - [ ] Function Implementation
+   - [ ] Basic Mathematical expression Evaluation
+   - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
+   - [ ] Branching and looping support
+   - [ ] Function Implementation
   
 1. Shell Script
-  - [ ] Basic Mathematical expression Evaluation
-  - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
-  - [ ] Branching and looping support
-  - [ ] Function Implementation
+   - [ ] Basic Mathematical expression Evaluation
+   - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
+   - [ ] Branching and looping support
+   - [ ] Function Implementation
   
 1. dos
-  - [ ] Basic Mathematical expression Evaluation
-  - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
-  - [ ] Branching and looping support
-  - [ ] Function Implementation
+   - [ ] Basic Mathematical expression Evaluation
+   - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
+   - [ ] Branching and looping support
+   - [ ] Function Implementation
