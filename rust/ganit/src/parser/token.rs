@@ -20,6 +20,8 @@ impl Token {
             str = format!("{} value: {}", str.to_string(), self.double_value);
         } else if self.token_type == "str".to_string() {
             str = format!("{} value: {}", str.to_string(), self.str_value);
+        } else if self.token_type == "operator".to_string() {
+            str = format!("{} value: {}", str.to_string(), self.str_value);
         }
 
         return str;
