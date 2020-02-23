@@ -28,8 +28,8 @@ pub fn tokenize(input: String) -> Vec<Token> {
             let token: Token = Token {
                 line: _line_number,
                 column: _column_number,
-                token_type: "int".to_string(),
-                str_value: str_literal_value,
+                token_type: "str".to_string(),
+                str_value: str_literal_value.to_string(),
                 double_value: 0.0,
                 int_value: 0,
                 bool_value: false,

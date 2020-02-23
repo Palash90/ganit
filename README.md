@@ -9,7 +9,7 @@ This is a project which is in planning phase and all the required publishing cha
 
 The language is planned to be ported to the following languages as libraries -
 
-1. dotnet
+1. dotnet (Implementation in Progress)
    - [ ] Basic Mathematical expression Evaluation
    - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
    - [ ] Branching and looping support
@@ -33,7 +33,7 @@ The language is planned to be ported to the following languages as libraries -
    - [ ] Branching and looping support
    - [ ] Function Implementation
   
-1. Rust (Implementation in Progress)
+1. Rust 
    - [ ] Basic Mathematical expression Evaluation
    - [ ] Built-in out of box Support for Matrices and Scalar (Like Matlab)
    - [ ] Branching and looping support
