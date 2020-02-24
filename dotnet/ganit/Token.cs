@@ -7,6 +7,11 @@ namespace ganit
         public int column { get; set; }
 
         public static char[] Separators = { ' ', '\n' };
-        public static char[] Operators = { '+', '-', '*', '\\' };
+        public static char[] Operators = {
+                            '+', '-', '*', '/',
+                            '=', '(', ')', '{', '}',
+                            '[', ']', ',', ';',
+                            '<', '>', '!'
+                            };
     }
 }

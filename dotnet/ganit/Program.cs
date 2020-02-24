@@ -17,8 +17,8 @@ namespace ganit
                 {
                     string text = System.IO.File.ReadAllText(args[0]);
                     Tokenizer tokenizer = new Tokenizer();
-                    foreach (var token in tokenizer.Tokenize(text)){
-                        Console.WriteLine(token.token);
+                    foreach (var token in tokenizer.Tokenize(text+" ")){
+                        Console.WriteLine("{0} {1} {2}",token.token, token.line, token.column);
                     }
                 }
                 catch (FileNotFoundException f)

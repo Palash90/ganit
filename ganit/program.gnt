@@ -9,3 +9,23 @@
 0-2
 --2
 +-2
+
+let a=3+2
+
+if(a==5){
+    print(a)
+}
+
+let a=[2,5,4; 6,5,3]
+
+for(i=0;i<a.len;i++){print(a[i]);
+}
+
+function len(a){
+    a=3+2
+    return a.len
+}
+A.* B
+A./B
+
+a="Palash"
