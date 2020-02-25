@@ -6,7 +6,7 @@ namespace ganit
 {
     public class Tokenizer
     {
-        public List<Token> Tokenize(string text)
+        public static List<Token> Tokenize(string text)
         {
             List<Token> tokens = new List<Token>();
             int line = 1;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace ganit
 {
@@ -16,10 +17,8 @@ namespace ganit
                 try
                 {
                     string text = System.IO.File.ReadAllText(args[0]);
-                    Tokenizer tokenizer = new Tokenizer();
-                    foreach (var token in tokenizer.Tokenize(text+" ")){
-                        Console.WriteLine("{0} {1} {2}",token.token, token.line, token.column);
-                    }
+                    List<Token> tokens = Tokenizer.Tokenize(text + " ");
+                    ShuntingYard.Parse(tokens);
                 }
                 catch (FileNotFoundException f)
                 {
