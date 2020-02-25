@@ -8,7 +8,7 @@ namespace ganit
 
         public static char[] Separators = { ' ', '\n' };
         public static char[] Operators = {
-                            '+', '-', '*', '/',
+                            '+', '-', '*', '/', '%', '^',
                             '=', '(', ')', '{', '}',
                             '[', ']', ',', ';',
                             '<', '>', '!'
