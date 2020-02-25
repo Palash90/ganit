@@ -65,12 +65,12 @@ namespace ganit
 
         private static bool IsSeparator(char currChar)
         {
-            return Array.Exists(Token.Separators, element => element == currChar);
+            return Array.Exists(LanguageConstruct.Separators, element => element == currChar);
         }
 
         private static bool IsOperator(char currChar)
         {
-            return Array.Exists(Token.Operators, element => element == currChar);
+            return Array.Exists(LanguageConstruct.Operators, element => element == currChar);
         }
     }
 }
