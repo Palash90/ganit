@@ -2,7 +2,7 @@ namespace ganit
 {
     public enum Type
     {
-        OPERATOR, SEPARATOR, VARIABLE, KEYWORD, START, EOF
+        OPERATOR, SEPARATOR, VARIABLE, KEYWORD, START, EOF, INT_LITERAL, DOUBLE_LITERAL, STRING_LITERAL
     }
 
     public enum Meaning
@@ -33,7 +33,7 @@ namespace ganit
         public int line { get; set; }
         public int column { get; set; }
         public Type type { get; set; }
-
+        public double doubleValue { get; set; }
         public Meaning meaning { get; set; }
     }
 }

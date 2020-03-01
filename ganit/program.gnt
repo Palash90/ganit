@@ -8,7 +8,7 @@
 -2
 (4*2)-5;
 
-A=2
+_A=2
 A==2
 ! A
 !A
@@ -21,9 +21,9 @@ A < 3
 A <=       4
 A<=2
 
-function find=even(a, b){
+function _findeven(a, b){
     let    i = 0
-    while i < a.len{
+    while i < len(a){
         if(a[i]%2==0){
             break
         }else{
@@ -33,3 +33,4 @@ function find=even(a, b){
     }
 }
 2,4
+2+_findeven(4)

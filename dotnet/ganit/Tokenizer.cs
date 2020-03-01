@@ -7,10 +7,7 @@ namespace ganit
 {
     public class ParseException : Exception
     {
-        public ParseException(string msg) : base(msg)
-        {
-
-        }
+        public ParseException(string msg) : base(msg) { }
     }
     public class Tokenizer
     {
@@ -83,23 +80,23 @@ namespace ganit
                 Token currToken = Peek();
                 if (currToken.value == "=")
                 {
-                    currToken = CheckEqualSign(analyzedTokens);
+                    currToken = CheckSign(analyzedTokens, "==");
                 }
                 else if (currToken.value == "!")
                 {
-                    currToken = CheckNegateSign(analyzedTokens);
+                    currToken = CheckSign(analyzedTokens, "!=");
                 }
                 else if (currToken.value == ">")
                 {
-                    currToken = CheckGreaterSign(analyzedTokens);
+                    currToken = CheckSign(analyzedTokens, ">=");
                 }
                 else if (currToken.value == "<")
                 {
-                    currToken = CheckLessSign(analyzedTokens);
+                    currToken = CheckSign(analyzedTokens, "<=");
                 }
                 else if (currToken.value == "-")
                 {
-                    currToken = CheckMinusSign(analyzedTokens);
+                    currToken = CheckSign(analyzedTokens);
                 }
                 else if (IsOperator(currToken.value.ToCharArray()[0]))
                 {
@@ -130,8 +127,9 @@ namespace ganit
             return analyzedTokens;
         }
 
-        #region Check different operators
-        private Token CheckLessSign(List<Token> analyzedTokens)
+        #region Check for multi-character operators
+
+        private Token CheckSign(List<Token> analyzedTokens, String newValue)
         {
             Token currToken;
             Token tempToken = Peek();
@@ -142,69 +140,13 @@ namespace ganit
             if (currToken.value == "=")
             {
                 Consume();
-                tempToken.value = ">=";
+                tempToken.value = newValue;
                 tempToken.type = Type.OPERATOR;
             }
             analyzedTokens.Add(tempToken);
             return currToken;
         }
-
-        private Token CheckGreaterSign(List<Token> analyzedTokens)
-        {
-            Token currToken;
-            Token tempToken = Peek();
-            tempToken.type = Type.OPERATOR;
-            Consume();
-            currToken = Peek();
-
-            if (currToken.value == "=")
-            {
-                Consume();
-                tempToken.value = ">=";
-                tempToken.type = Type.OPERATOR;
-            }
-            analyzedTokens.Add(tempToken);
-            return currToken;
-        }
-
-        private Token CheckNegateSign(List<Token> analyzedTokens)
-        {
-            Token currToken;
-            Token tempToken = Peek();
-            tempToken.value = "!";
-            tempToken.type = Type.OPERATOR;
-            Consume();
-            currToken = Peek();
-
-            if (currToken.value == "=")
-            {
-                Consume();
-                tempToken.value = "!=";
-                tempToken.type = Type.OPERATOR;
-            }
-            analyzedTokens.Add(tempToken);
-            return currToken;
-        }
-
-        private Token CheckEqualSign(List<Token> analyzedTokens)
-        {
-            Token currToken;
-            Token tempToken = Peek();
-            tempToken.type = Type.OPERATOR;
-            Consume();
-            currToken = Peek();
-
-            if (currToken.value == "=")
-            {
-                Consume();
-                tempToken.value = "==";
-                tempToken.type = Type.OPERATOR;
-            }
-            analyzedTokens.Add(tempToken);
-            return currToken;
-        }
-
-        private Token CheckMinusSign(List<Token> analyzedTokens)
+        private Token CheckSign(List<Token> analyzedTokens)
         {
             Token currToken;
             Token tempToken = Peek();
@@ -238,14 +180,45 @@ namespace ganit
         {
             Token token = Peek();
 
-            var regex = @"[a-zA-Z$_][a-zA-Z0-9$_]*";
+            var regex = "^[a-zA-Z_$][a-zA-Z_$0-9]*$";
             var match = Regex.Match(token.value, regex);
-            if (!match.Success)
+
+            long intLiteral;
+            double doubleLiteral;
+
+
+            if (Int64.TryParse(token.value, out intLiteral))
             {
-                //    throw new ParseException(String.Format("Error in variable name line {0}, column {1}: {2}",
-                //              token.line, token.column, token.value));
+
+                token.doubleValue = intLiteral;
+                token.type = Type.INT_LITERAL;
             }
-            token.type = Type.VARIABLE;
+            else if (Double.TryParse(token.value, out doubleLiteral))
+            {
+
+                token.doubleValue = doubleLiteral;
+                token.type = Type.DOUBLE_LITERAL;
+            }
+            else if (match.Success)
+            {
+                token.type = Type.VARIABLE;
+            }
+            else
+            {
+                Token last = PeekLast(analyzedTokens);
+                if (last.value == "function")
+                {
+                    throw new ParseException(String.Format("Syntax error in function name line {0}, column {1}: {2}",
+                                                        token.line, token.column, token.value));
+
+                }
+                else
+                {
+                    throw new ParseException(String.Format("Syntax error in variable name line {0}, column {1}: {2}",
+                                                                            token.line, token.column, token.value));
+                }
+
+            }
             analyzedTokens.Add(token);
             Consume();
         }
@@ -276,10 +249,13 @@ namespace ganit
 
         private void Consume() => pointer++;
         #endregion
+
+        #region Determine token type
         private bool IsSeparator(char value) => Array.Exists(LanguageConstruct.Separators, element => element == value);
 
         private bool IsOperator(char value) => Array.Exists(LanguageConstruct.Operators, element => element == value);
 
         private bool IsKeyword(string value) => Array.Exists(LanguageConstruct.Keywords, element => element == value);
+        #endregion
     }
 }
