@@ -201,7 +201,15 @@ namespace ganit
             }
             else if (match.Success)
             {
-                token.type = Type.VARIABLE;
+                Token last = PeekLast(analyzedTokens);
+                if (last.value == "function")
+                {
+                    token.type = Type.FUNCDEF;
+                }
+                else
+                {
+                    token.type = Type.VARIABLE;
+                }
             }
             else
             {

@@ -21,7 +21,9 @@ A < 3
 A <=       4
 A<=2
 
-function _findeven(a, b){
+
+
+function _find2even(a, b){
     let    i = 0
     while i < len(a){
         if(a[i]%2==0){
@@ -34,3 +36,6 @@ function _findeven(a, b){
 }
 2,4
 2+_findeven(4)
+2.5468
+
+0x1
