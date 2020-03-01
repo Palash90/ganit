@@ -1,11 +1,2 @@
-function find_even(a){
-    i = 0
-    while i < a.len{
-        if(a[i]%2==0){
-            break
-        }else{
-            continue
-        }
-        i++
-    }
-}
+2===5
+3=5

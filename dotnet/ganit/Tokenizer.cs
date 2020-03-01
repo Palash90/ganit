@@ -63,6 +63,11 @@ namespace ganit
             return tokens;
         }
 
+        private static List<Token> Analyzer(List<Token> tokens){
+            List<Token> analyzedTokens = new List<Token>();
+
+            return analyzedTokens;
+        }
         private static bool IsSeparator(char currChar)
         {
             return Array.Exists(LanguageConstruct.Separators, element => element == currChar);

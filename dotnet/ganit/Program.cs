@@ -23,6 +23,8 @@ namespace ganit
                 catch (FileNotFoundException f)
                 {
                     Console.WriteLine(f.Message);
+                } catch(FormatException e){
+                    Console.WriteLine(e.Message);
                 }
             }
         }
