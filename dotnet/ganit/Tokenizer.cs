@@ -39,7 +39,7 @@ namespace ganit
                     tokenStartColumn = column;
                     tokens.Add(token);
 
-                    if (IsOperator(currChar))
+                    if (IsOperator(currChar) || currChar == ',')
                     {
                         Token opearatorToken = new Token
                         {
@@ -167,6 +167,20 @@ namespace ganit
                     analyzedTokens.Add(token);
                     Consume();
                 }
+                else if (IsSeparator(currToken.value.ToCharArray()[0]))
+                {
+                    Token token = Peek();
+                    token.type = Type.SEPARATOR;
+                    analyzedTokens.Add(token);
+                    Consume();
+                }
+                else if (IsKeyword(currToken.value))
+                {
+                    Token token = Peek();
+                    token.type = Type.KEYWORD;
+                    analyzedTokens.Add(token);
+                    Consume();
+                }
                 else
                 {
                     Token token = Peek();
@@ -174,7 +188,6 @@ namespace ganit
                     analyzedTokens.Add(token);
                     Consume();
                 }
-
             }
             return analyzedTokens;
         }
@@ -204,8 +217,10 @@ namespace ganit
 
         private void Consume() => pointer++;
 
-        private bool IsSeparator(char currChar) => Array.Exists(LanguageConstruct.Separators, element => element == currChar);
+        private bool IsSeparator(char value) => Array.Exists(LanguageConstruct.Separators, element => element == value);
 
-        private bool IsOperator(char currChar) => Array.Exists(LanguageConstruct.Operators, element => element == currChar);
+        private bool IsOperator(char value) => Array.Exists(LanguageConstruct.Operators, element => element == value);
+
+        private bool IsKeyword(string value) => Array.Exists(LanguageConstruct.Keywords, element => element == value);
     }
 }

@@ -20,3 +20,16 @@ A>=2
 A < 3
 A <=       4
 A<=2
+
+function find_even(a, b){
+    let    i = 0
+    while i < a.len{
+        if(a[i]%2==0){
+            break
+        }else{
+            continue
+        }
+        i++
+    }
+}
+2,4

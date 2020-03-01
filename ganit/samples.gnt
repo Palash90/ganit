@@ -1,5 +1,5 @@
 function find_even(a){
-    i = 0
+    let i = 0
     while i < a.len{
         if(a[i]%2==0){
             break

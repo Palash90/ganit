@@ -2,7 +2,7 @@ namespace ganit
 {
     public enum Type
     {
-        OPERATOR, VARIABLE, KEYWORD, START, EOF
+        OPERATOR, SEPARATOR, VARIABLE, KEYWORD, START, EOF
     }
 
     public enum Meaning
@@ -16,13 +16,16 @@ namespace ganit
     public class LanguageConstruct
     {
 
-        public static char[] Separators = { ' ', '\n' };
+        public static char[] Separators = { ' ', '\n', ',' };
         public static char[] Operators = {
                             '+', '-', '*', '/', '%', '^',
                             '=', '(', ')', '{', '}',
-                            '[', ']', ',', ';',
+                            '[', ']', ';',
                             '<', '>', '!'
                             };
+        public static string[] Keywords = {
+            "let", "if", "while", "break", "continue", "function"
+        };
     }
     public class Token
     {
