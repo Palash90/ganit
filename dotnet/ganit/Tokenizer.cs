@@ -31,7 +31,7 @@ namespace ganit
                 {
                     Token token = new Token
                     {
-                        token = tokenPart,
+                        value = tokenPart,
                         line = line,
                         column = tokenStartColumn + 1
                     };
@@ -43,7 +43,7 @@ namespace ganit
                     {
                         Token opearatorToken = new Token
                         {
-                            token = currChar.ToString(),
+                            value = currChar.ToString(),
                             line = line,
                             column = column
                         };
@@ -61,7 +61,7 @@ namespace ganit
 
                 index++;
             }
-            tokens = tokens.Where(t => !String.IsNullOrEmpty(t.token)).ToList();
+            tokens = tokens.Where(t => !String.IsNullOrEmpty(t.value)).ToList();
             return Analyzer();
         }
 
@@ -69,105 +69,108 @@ namespace ganit
         {
             List<Token> analyzedTokens = new List<Token>();
 
-            while (Peek().type != "EOF")
+            while (Peek().type != Type.EOF)
             {
                 Token currToken = Peek();
-                if (currToken.token == "=")
+                if (currToken.value == "=")
                 {
                     Token tempToken = Peek();
-                    tempToken.type = "ASSIGNMENT";
+                    tempToken.type = Type.OPERATOR;
                     Consume();
                     currToken = Peek();
 
-                    if (currToken.token == "=")
+                    if (currToken.value == "=")
                     {
                         Consume();
-                        tempToken.token = "==";
-                        tempToken.type = "EQ";
+                        tempToken.value = "==";
+                        tempToken.type = Type.OPERATOR;
                     }
                     analyzedTokens.Add(tempToken);
                 }
-                else if (currToken.token == "!")
+                else if (currToken.value == "!")
                 {
                     Token tempToken = Peek();
-                    tempToken.type = "Negation";
+                    tempToken.value = "!";
+                    tempToken.type = Type.OPERATOR;
                     Consume();
                     currToken = Peek();
 
-                    if (currToken.token == "=")
+                    if (currToken.value == "=")
                     {
                         Consume();
-                        tempToken.token = "!=";
-                        tempToken.type = "NEQ";
+                        tempToken.value = "!=";
+                        tempToken.type = Type.OPERATOR;
                     }
                     analyzedTokens.Add(tempToken);
                 }
-                else if (currToken.token == ">")
+                else if (currToken.value == ">")
                 {
                     Token tempToken = Peek();
-                    tempToken.type = "GT";
+                    tempToken.type = Type.OPERATOR;
                     Consume();
                     currToken = Peek();
 
-                    if (currToken.token == "=")
+                    if (currToken.value == "=")
                     {
                         Consume();
-                        tempToken.token = ">=";
-                        tempToken.type = "GE";
+                        tempToken.value = ">=";
+                        tempToken.type = Type.OPERATOR;
                     }
                     analyzedTokens.Add(tempToken);
                 }
-                else if (currToken.token == "<")
+                else if (currToken.value == "<")
                 {
                     Token tempToken = Peek();
-                    tempToken.type = "LT";
+                    tempToken.type = Type.OPERATOR;
                     Consume();
                     currToken = Peek();
 
-                    if (currToken.token == "=")
+                    if (currToken.value == "=")
                     {
                         Consume();
-                        tempToken.token = "<=";
-                        tempToken.type = "LE";
+                        tempToken.value = ">=";
+                        tempToken.type = Type.OPERATOR;
                     }
                     analyzedTokens.Add(tempToken);
                 }
-                else if (currToken.token == "-")
+                else if (currToken.value == "-")
                 {
                     Token tempToken = Peek();
                     Consume();
                     currToken = Peek();
 
-                    if (currToken.token == "-")
+                    if (currToken.value == "-")
                     {
                         Consume();
-                        tempToken.token = "+";
-                        tempToken.type = "Operator";
+                        tempToken.value = "+";
+                        tempToken.type = Type.OPERATOR;
                     }
-                    else if (PeekLastToken(analyzedTokens).token == ")" || PeekLastToken(analyzedTokens).type == "Var")
+                    else if (PeekLast(analyzedTokens).value == ")" || PeekLast(analyzedTokens).type == Type.VARIABLE)
                     {
                         Consume();
-                        tempToken.token = "-";
-                        tempToken.type = "Binary Minus";
+                        tempToken.value = "-";
+                        tempToken.meaning = Meaning.BINARY_MINUS;
+                        tempToken.type = Type.VARIABLE;
                     }
-                    else if (PeekLastToken(analyzedTokens).type == "Operator" || PeekLastToken(analyzedTokens).token == "(" || PeekLastToken(analyzedTokens).type == "START")
+                    else if (PeekLast(analyzedTokens).type == Type.OPERATOR || PeekLast(analyzedTokens).value == "(" || PeekLast(analyzedTokens).type == Type.START)
                     {
-                        tempToken.token = "-";
-                        tempToken.type = "Unary Minus";
+                        tempToken.value = "-";
+                        tempToken.type = Type.OPERATOR;
+                        tempToken.meaning = Meaning.UNARY_MINUS;
                     }
                     analyzedTokens.Add(tempToken);
                 }
-                else if (IsOperator(currToken.token.ToCharArray()[0]))
+                else if (IsOperator(currToken.value.ToCharArray()[0]))
                 {
                     Token token = Peek();
-                    token.type = "Operator";
+                    token.type = Type.OPERATOR;
                     analyzedTokens.Add(token);
                     Consume();
                 }
                 else
                 {
                     Token token = Peek();
-                    token.type = "Var";
+                    token.type = Type.VARIABLE;
                     analyzedTokens.Add(token);
                     Consume();
                 }
@@ -176,26 +179,12 @@ namespace ganit
             return analyzedTokens;
         }
 
-        private Token PeekLastToken(List<Token> tokens)
+        private Token PeekLast(List<Token> tokens)
         {
             if (tokens.Count > 0)
                 return tokens[tokens.Count - 1];
             else
-                return new Token { type = "START" };
-        }
-        private Token PeekLast()
-        {
-            if (pointer > 0)
-            {
-                return tokens[pointer - 1];
-            }
-            else
-            {
-                return new Token
-                {
-                    type = "START"
-                };
-            }
+                return new Token { type = Type.START };
         }
 
         private Token Peek()
@@ -208,23 +197,15 @@ namespace ganit
             {
                 return new Token
                 {
-                    type = "EOF"
+                    type = Type.EOF
                 };
             }
         }
-        private void Consume()
-        {
-            pointer++;
-        }
 
-        private bool IsSeparator(char currChar)
-        {
-            return Array.Exists(LanguageConstruct.Separators, element => element == currChar);
-        }
+        private void Consume() => pointer++;
 
-        private bool IsOperator(char currChar)
-        {
-            return Array.Exists(LanguageConstruct.Operators, element => element == currChar);
-        }
+        private bool IsSeparator(char currChar) => Array.Exists(LanguageConstruct.Separators, element => element == currChar);
+
+        private bool IsOperator(char currChar) => Array.Exists(LanguageConstruct.Operators, element => element == currChar);
     }
 }
