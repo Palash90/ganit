@@ -7,6 +7,24 @@ namespace ganit
     {
         public static void Parse(List<Token> tokens)
         {
+            var operatorStack = new Stack<Token>();
+            var outputQueue = new Queue<Token>();
+
+            foreach (var token in tokens)
+            {
+                if (token.type == Type.INT_LITERAL || token.type == Type.DOUBLE_LITERAL)
+                {
+                    outputQueue.Enqueue(token);
+                }
+                if (token.type == Type.FUNC_INVOKE)
+                {
+                    operatorStack.Push(token);
+                }
+                
+            }
+        }
+        public static void Print(List<Token> tokens)
+        {
             int index = 1;
             foreach (var token in tokens)
             {

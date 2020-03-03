@@ -1,4 +1,4 @@
-
+import "samples.gnt"
 "Value of -2 +  3 is:"  + -2+3
 2*-2
 2*(-2)
@@ -13,7 +13,7 @@ _A=2
 A==2
 ! A
 !A
-A != 5
+A ! = 5
 A!=3
 A > 3
 A >=       4
@@ -30,11 +30,11 @@ function _find2even(a, b){
         if(a[i]%2==0){
             break
         }else{
-	    print("Working")
+        print("Working 2.2 = " + 2*2)
             continue
         }
         i++
-    }
+        }
 }
 2,4
 2+_findeven(4)

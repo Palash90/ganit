@@ -19,6 +19,7 @@ namespace ganit
                     Tokenizer tokenizer = new Tokenizer();
                     string text = System.IO.File.ReadAllText(args[0]);
                     List<Token> tokens = tokenizer.Tokenize(text + " ");
+                    ShuntingYard.Print(tokens);
                     ShuntingYard.Parse(tokens);
                 }
                 catch (FileNotFoundException f)

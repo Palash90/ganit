@@ -24,7 +24,7 @@ namespace ganit
                             '<', '>', '!'
                             };
         public static string[] Keywords = {
-            "let", "if", "while", "break", "continue", "function"
+            "let", "if", "while", "break", "continue", "function", "import"
         };
     }
     public class Token
