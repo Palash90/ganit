@@ -68,10 +68,10 @@ namespace ganit
                 index++;
             }
             tokens = tokens.Where(t => !String.IsNullOrEmpty(t.value)).ToList();
-            return Analyzer();
+            return Analyze();
         }
         #endregion
-        private List<Token> Analyzer()
+        private List<Token> Analyze()
         {
             List<Token> analyzedTokens = new List<Token>();
 
@@ -202,9 +202,15 @@ namespace ganit
             else if (match.Success)
             {
                 Token last = PeekLast(analyzedTokens);
+                Token next = PeekNext();
+
                 if (last.value == "function")
                 {
                     token.type = Type.FUNCDEF;
+                }
+                else if (next.value == "(")
+                {
+                    token.type = Type.FUNC_INVOKE;
                 }
                 else
                 {
@@ -245,6 +251,21 @@ namespace ganit
             if (pointer < tokens.Count)
             {
                 return tokens[pointer];
+            }
+            else
+            {
+                return new Token
+                {
+                    type = Type.EOF
+                };
+            }
+        }
+
+        private Token PeekNext()
+        {
+            if (pointer + 1 < tokens.Count)
+            {
+                return tokens[pointer + 1];
             }
             else
             {

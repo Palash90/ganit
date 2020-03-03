@@ -1,8 +1,10 @@
+using System.Collections.Generic;
+
 namespace ganit
 {
     public enum Type
     {
-        OPERATOR, SEPARATOR, VARIABLE, KEYWORD, START, EOF, INT_LITERAL, DOUBLE_LITERAL, STRING_LITERAL, FUNCDEF
+        OPERATOR, SEPARATOR, VARIABLE, KEYWORD, START, EOF, INT_LITERAL, DOUBLE_LITERAL, STRING_LITERAL, FUNCDEF, FUNC_INVOKE
     }
 
     public enum Meaning

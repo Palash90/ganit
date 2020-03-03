@@ -38,4 +38,4 @@ function _find2even(a, b){
 2+_findeven(4)
 2.5468
 
-0x1
+
