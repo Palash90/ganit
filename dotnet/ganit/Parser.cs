@@ -16,7 +16,7 @@ namespace ganit
                     index++;
                 }
                 Console.Write("{0} {1} {2} ", token.value, token.type, token.meaning);
-                //Console.Write("{0} {1}", token.line, token.column);
+                Console.Write("{0} {1}", token.line, token.column);
                 Console.Write("\t");
             }
             Console.WriteLine();

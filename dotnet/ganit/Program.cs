@@ -24,7 +24,7 @@ namespace ganit
                 catch (FileNotFoundException f)
                 {
                     Console.WriteLine(f.Message);
-                } catch(ParseException e){
+                } catch(SyntaxException e){
                     Console.WriteLine(e.Message);
                 }
             }

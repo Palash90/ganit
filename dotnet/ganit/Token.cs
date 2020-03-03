@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace ganit
 {
     public enum Type
@@ -18,7 +16,7 @@ namespace ganit
     public class LanguageConstruct
     {
 
-        public static char[] Separators = { ' ', '\n', ',' };
+        public static char[] Separators = { ' ', '\t', '\n', ',' };
         public static char[] Operators = {
                             '+', '-', '*', '/', '%', '^',
                             '=', '(', ')', '{', '}',

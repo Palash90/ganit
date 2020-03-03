@@ -5,9 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace ganit
 {
-    public class ParseException : Exception
+    public class SyntaxException : Exception
     {
-        public ParseException(string msg) : base(msg) { }
+        public SyntaxException(string msg) : base(msg) { }
     }
     public class Tokenizer
     {
@@ -23,6 +23,8 @@ namespace ganit
             int tokenStartColumn = 0;
 
             string tokenPart = "";
+            var stringStartColumn = 0;
+            var stringStartedLine = 0;
 
             while (index < text.Length)
             {
@@ -33,7 +35,29 @@ namespace ganit
                 {
                     column = 0;
                 }
-                if (IsSeparator(currChar) || IsOperator(currChar))
+                if (currChar == '"')
+                {
+                    stringStartColumn = column;
+                    stringStartedLine = line;
+                    do
+                    {
+                        currChar = text[index];
+                        tokenPart = tokenPart + currChar;
+                        index++;
+                        if (currChar == '\n')
+                        {
+                            column = 0;
+                            line++;
+                        }
+                        if (index >= text.Length)
+                        {
+                            throw new SyntaxException(String.Format("Invalid String Literal at line: {0} column:{1}", stringStartedLine, stringStartColumn));
+                        }
+                        column++;
+                    } while (index < text.Length && text[index] != '"');
+                    tokenPart += "\"";
+                }
+                else if (IsSeparator(currChar) || IsOperator(currChar))
                 {
                     Token token = new Token
                     {
@@ -199,6 +223,10 @@ namespace ganit
                 token.doubleValue = doubleLiteral;
                 token.type = Type.DOUBLE_LITERAL;
             }
+            else if (token.value.StartsWith("\""))
+            {
+                token.type = Type.STRING_LITERAL;
+            }
             else if (match.Success)
             {
                 Token last = PeekLast(analyzedTokens);
@@ -222,13 +250,13 @@ namespace ganit
                 Token last = PeekLast(analyzedTokens);
                 if (last.value == "function")
                 {
-                    throw new ParseException(String.Format("Syntax error in function name line {0}, column {1}: {2}",
+                    throw new SyntaxException(String.Format("Syntax error in function name line {0}, column {1}: {2}",
                                                         token.line, token.column, token.value));
 
                 }
                 else
                 {
-                    throw new ParseException(String.Format("Syntax error in variable name line {0}, column {1}: {2}",
+                    throw new SyntaxException(String.Format("Syntax error in variable name line {0}, column {1}: {2}",
                                                                             token.line, token.column, token.value));
                 }
 
